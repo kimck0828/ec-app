@@ -1,23 +1,25 @@
-export const SIGN_IN = "SIGN_IN";
-export const signInAction = (userState) => {
+/** サインイン**/
+export const SIGN_IN = 'SIGN_IN';
+export const signInAction = ({ uid, username }) => {
   return {
-    type: "SIGN_IN",
+    type: 'SIGN_IN',
     payload: {
       isSignedIn: true,
-      uid: userState.uid,
-      username: userState.username,
+      uid,
+      username,
     },
   };
 };
 
-export const SIGN_OUT = "SIGN_OUT";
+/** サインアウト**/
+export const SIGN_OUT = 'SIGN_OUT';
 export const signOutAction = () => {
   return {
-    type: "SIGN_OUT",
+    type: 'SIGN_OUT',
     payload: {
       isSignedIn: false,
-      uid: "",
-      username: "",
+      uid: '',
+      username: '',
     },
   };
 };
