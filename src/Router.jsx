@@ -5,12 +5,10 @@ import { Home, Login } from './templates';
 
 const Router = () => {
   return (
-    <>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="(/)?" component={Home} />
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/login" component={Login} />
+      <Route path="(/)?" component={Home} />
+    </Switch>
   );
 };
 export default Router;

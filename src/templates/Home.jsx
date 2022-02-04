@@ -1,7 +1,7 @@
 import React from 'react';
 import { push } from 'connected-react-router';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUserId } from '../reducks/users/selectors';
+import { getUserId, getUserName } from '../reducks/users/selectors';
 import { signOutAction } from '../reducks/users/actions';
 
 function Home(props) {
@@ -9,6 +9,7 @@ function Home(props) {
 
   const selector = useSelector((state) => state);
   const uid = getUserId(selector);
+  const userName = getUserName(selector);
 
   const signout = (uid) => {
     if (!uid) {
@@ -16,7 +17,9 @@ function Home(props) {
     }
     return (
       <div>
-        <h3>{uid}</h3>
+        <h3>
+          {userName}({uid})
+        </h3>
         <button
           onClick={() => {
             dispatch(signOutAction());
